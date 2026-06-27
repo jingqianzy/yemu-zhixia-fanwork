@@ -840,6 +840,145 @@
 
   .timeline-date { font-size: 12px; color: var(--text3); margin-bottom: 3px; }
 
+  /* ===== 创作笔记 ===== */
+  .note-section {
+    background: linear-gradient(135deg, rgba(201,168,76,0.04), rgba(76,123,201,0.04));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 8px;
+  }
+  .note-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .note-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .note-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text1);
+    background: var(--bg1);
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.6;
+    box-sizing: border-box;
+  }
+  .note-textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(201,168,76,0.1);
+  }
+  .note-url-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .note-url-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text2);
+    background: var(--bg1);
+    box-sizing: border-box;
+  }
+  .note-url-input:focus {
+    outline: none;
+    border-color: var(--blue);
+  }
+  .note-save-btn {
+    padding: 8px 18px;
+    background: linear-gradient(135deg, var(--gold), #b8941f);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .note-save-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+  .note-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .note-item {
+    background: var(--bg1);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    position: relative;
+  }
+  .note-item-text {
+    font-size: 13px;
+    color: var(--text1);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .note-item-source {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+  .note-item-source a {
+    color: var(--blue);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .note-item-source a:hover {
+    text-decoration: underline;
+  }
+  .note-item-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
+  }
+  .note-item-time {
+    font-size: 11px;
+    color: var(--text3);
+  }
+  .note-delete-btn {
+    padding: 2px 10px;
+    background: rgba(201,76,76,0.1);
+    color: var(--red);
+    border: 1px solid rgba(201,76,76,0.2);
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .note-delete-btn:hover {
+    background: rgba(201,76,76,0.2);
+  }
+  .note-empty {
+    font-size: 12px;
+    color: var(--text3);
+    text-align: center;
+    padding: 16px;
+    background: var(--bg3);
+    border-radius: 8px;
+  }
+
   @media (max-width: 900px) {
     .stat-cards { grid-template-columns: 1fr 1fr; }
     .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
@@ -1457,6 +1596,26 @@ const characters = [
     hotContent: '"牌局先知"卡面画风奇特引爆讨论；命运/宿命向同人深受欢迎',
     lore: '以"愚者"为代号，命运感强烈。对主角有着难以言说的纠葛，在博弈与挑战中逐渐展露真实内心。',
   },
+  {
+    id: 'rosas',
+    emoji: '🥀',
+    name: '罗萨斯',
+    en: 'Rosas',
+    title: '悲剧的傀儡家主 · 输掉的赢家',
+    faction: '达克利亚家族',
+    weapon: '未知',
+    desire: '私欲',
+    rarity: '★★★★★★',
+    tags: ['兄控', '傀儡家主', '缺爱', '悲剧角色', '白月光', '翡翠泪成瘾'],
+    personality: '达克利亚家族的表面家主、实际傀儡。内心深处极度渴望哥哥阿尔贝托的关注与认可，却被哥哥当作随时可弃的棋子。表面声色犬马实则孤独缺爱，依赖翡翠泪麻痹自己，明知达克利亚已无可救药却无力改变。',
+    quote: '"你说错了罗萨斯，不是所有人都想要钥匙……"',
+    combatRole: '暂未实装（NPC角色）',
+    cardVariants: ['暂无卡牌（剧情NPC）'],
+    hotCPs: ['罗萨斯×主角', '罗萨斯×阿尔贝托（兄弟情深/刀向）'],
+    hotTags: ['#罗萨斯', '#达克利亚', '#赢家也是输家', '#白月光', '#兄控宝宝', '#翡翠泪'],
+    hotContent: '第五章剧情引爆大量"悼念白月光"同人创作；兄弟线催泪向/命运讽刺向内容最受欢迎',
+    lore: '全名罗萨斯·达克利亚，夜行能力名"赢家"却一生未曾赢过。父母早逝，与哥哥阿尔贝托被逐出家族后，哥哥许诺夺回一切，而罗萨斯只是被推上前台的傀儡话事人。依赖翡翠泪上瘾，最终在第五章被刺杀，死后哥哥连葬礼都不操办。"明明是赢家，最后偏偏是输家"——玩家公认最悲情反派。',
+  },
 ];
 
 const trendData = {
@@ -1821,84 +1980,84 @@ const trendData = {
 
 const topics = [
   {
-    title: '愚者"牌局先知"深度人设解构：预知自己将被主角亲手终结，他为什么还要靠近？',
-    reason: '愚者6.18上线，正处新角色内容红利窗口期。命运悖论（预知终结却主动靠近）是虐心美学教科书级设定，目前深度人设分析近乎空白。塔罗牌0号位的象征意义与"失乐园"主题形成高级互文。',
-    platform: 'B站 + Lofter',
-    chars: ['愚者'],
-    type: '角色深度',
+    title: '将军174.6万点赞"年上黄昏恋"爆款全拆解：为什么全网都在笑？——从一句玩笑到角色人设科普',
+    reason: '6/22抖音UP主"年上黄昏恋"视频174.6万点赞，公测至今最高单条二创。从"认知错位"拆解爆款成因，引出"被144万人点赞的将军，我们对他的人设到底了解多少？"——借爆款流量做角色科普。',
+    platform: 'B站 + 抖音 + 小红书',
+    chars: ['将军'],
+    type: '爆款拆解+科普',
     score: 96,
   },
   {
-    title: '颠倒失乐园五座游戏厅解密：每一扇门背后都是谁的欲望牢笼？',
-    reason: '公测首个大型活动（6.18-7.30），大量玩家已通关但缺乏对五个游戏厅之间叙事逻辑的系统理解。当前"失乐园解析"类内容近乎为零——需求大、供给少的蓝海角度，每个成就描述都是叙事引言。',
-    platform: 'B站 + 小红书',
-    chars: ['全员'],
-    type: '剧情分析',
-    score: 94,
-  },
-  {
-    title: '野狼的左臂不是武器：那条金属义肢——是为掩护西西莉亚小女儿脱逃而失去的',
-    reason: '野狼全角色热度第一（100%），但现有同人集中在忠犬/驯狼向，其最沉重的创伤背景——失去左臂掩护小女儿脱逃——几乎无人做深度解读。"战斗中的软肋"是女性向受众最吃的情感模式。',
-    platform: '抖音 + AO3',
-    chars: ['野狼'],
-    type: '创伤解读',
+    title: '愚者卡面"改了不如不改"：第二轮争议揭示——官方修改卡面到底"修正"了什么？又失去了什么？',
+    reason: '卡面争议进入第二阶段：从"谁在凝视谁"转向"修改后失去了什么"。第一版有张力但"视角不对"，第二版安全但"平淡"——两版对比分析揭示女性向卡面设计的审美博弈。TapTap新帖持续讨论中。',
+    platform: 'B站 + 小红书 + TapTap',
+    chars: ['愚者'],
+    type: '争议分析',
     score: 92,
   },
   {
-    title: '暴君×愚者：当"占有欲怪物"遇到"命运预言家"——两个都知道结局的人在赌什么？',
-    reason: '暴君热度88%+愚者热度42%且快速增长，双"暗黑系"男角色碰撞。暴君想占有、愚者预知结局，两者博弈充满张力。这个CP目前几乎没有被系统开发过，市场空窗。',
-    platform: 'B站 + Lofter',
-    chars: ['暴君', '愚者'],
+    title: '幽灵×愚者：私欲者的危险共鸣——童谣与赌局，两种挑衅命运的方式',
+    reason: '首次提出的全新CP组合。两人共享"私欲"属性但方向相反：幽灵用童谣伪装（向内），愚者用赌局挑衅（向外）。私欲共振不是互补而是相互放大——两个都不会安慰对方的人，只会说"做你想做的"。二创市场中零供给。',
+    platform: 'Lofter + 小红书 + B站',
+    chars: ['幽灵', '愚者'],
     type: 'CP向',
     score: 90,
   },
   {
-    title: '将军的缺席：那场家族劫难中他到底在哪里？——用现有线索推理那个"无人知晓"的时刻',
-    reason: '将军热度第三（74%），雷霆统帅新卡6.23上线，正处内容红利期。官方设定悬疑锚点（"无人知晓他当时去了哪里"）是推理向内容绝佳切入点。可用的推理素材包括父母军人背景、心电装置、向日葵与故乡村庄。',
-    platform: 'B站 + 微博',
-    chars: ['将军'],
-    type: '悬疑推理',
+    title: '第五章剧情争议全景分析：罗萨斯的"因爱生恨"是败笔，还是女性向叙事的另一种可能？',
+    reason: 'TapTap热帖"论第五章后面的逻辑有多差"持续获得新回复，围绕反派降智、上帝视角信息落差、罗萨斯动机逻辑链的争议分化严重。社区对第五章的不满足恰是同人创作者的"改写出路"。长尾话题有持续热度。',
+    platform: 'B站 + TapTap + 微博',
+    chars: ['全员'],
+    type: '叙事争议分析',
     score: 88,
   },
   {
-    title: '幽灵结社的童谣密码：孤儿院孩子们传唱的儿歌，每一句都是暗杀指令',
-    reason: '幽灵"用童谣传播情报"的设定未被深度挖掘。孤儿院→童谣→情报网→暗杀形成完整黑暗童话闭环，极具辨识度和二创延展性。可虚构"幽灵结社童谣"系列，形成连载IP。',
-    platform: 'Lofter + 小红书',
-    chars: ['幽灵'],
-    type: '黑暗童话',
+    title: '某某人身份叙事："没有名字的人"——失乐园里唯一连名字都被"忘记"的角色',
+    reason: '失乐园核心叙事"忘掉过去"，所有角色都在遗忘——但某某人是唯一连名字都没有的角色。他的"无姓名"在失乐园语境下从设定留白变成叙事隐喻。结合缄默暗门"忘记了忘记了"——如果是某某人在提醒自己"忘记了"？',
+    platform: 'Lofter + 小红书 + B站',
+    chars: ['某某人'],
+    type: '角色深度',
+    score: 87,
+  },
+  {
+    title: '野狼的"犬"从属性：夜幕之下如何用忠犬铁臂重新定义女频"狼狗文学"？',
+    reason: '野狼热度95%但二创集中在"驯服"线。无人从文论角度分析：夜幕的忠犬叙事与传统女频狼狗文的根本差异——不是"幼时羁绊"而是"成年选择"，不是"保护欲→反哺"而是"已失败→仍守护"。核心洞察：野狼的忠犬不是甜宠而是赎罪。',
+    platform: 'B站 + Lofter + 微博',
+    chars: ['野狼'],
+    type: '文论向',
+    score: 86,
+  },
+  {
+    title: '红手套的右手疤痕×幽灵的失语童谣：两个用"壳"保护自己的人——镜像叙事',
+    reason: '红手套遮住手上伤疤，幽灵用童谣掩藏内心创伤。两人不约而同用外物隔离世界，差异在于：红手套的壳是"拒绝被看见"，幽灵的壳是"伪装成无害"。如果两人同时卸下伪装，会发生什么？一对未被开发的镜像关系。',
+    platform: 'Lofter + 小红书 + AO3',
+    chars: ['红手套', '幽灵'],
+    type: '镜像叙事',
     score: 85,
   },
   {
-    title: '红手套在失乐园：赌场里的律师，他辩护的最后一个人——是那个为父亲洗冤失败的法学院少年',
-    reason: '红手套家庭创伤线完整且心碎（右手伤疤+父亲冤案），失乐园"忘掉过去"的主题对他构成精准拷问。职业AU+版本主题双重嵌套，不是简单的AU而是角色在活动设定下的真实心理反应。',
-    platform: '小红书 + AO3',
-    chars: ['红手套'],
-    type: '职业AU',
+    title: '红手套vs暴君104.1万点赞混剪背后：恶欲者的对决——两种"恶"的碰撞',
+    reason: '6/22抖音"红手套vs暴君"混剪获104.1万点赞，但讨论仅停留在"好帅/好燃"。从角色叙事角度分析：两人共享"恶欲"属性但方向相反——暴君是扩张者的恶（拿走我想要的），红手套是守卫者的恶（别碰我的领地）。他们打的不是架，是规则定义权。',
+    platform: 'B站 + 抖音 + 小红书',
+    chars: ['红手套', '暴君'],
+    type: '爆款叙事延展',
+    score: 84,
+  },
+  {
+    title: '十日的馈赠倒计时 + "仲夏夜之梦"时装解读：失乐园活动中场的叙事信号',
+    reason: '"十日的馈赠"签到仅剩8天（7/5截止），园丁时装"仲夏夜之梦"——名字暗示一场短暂幻象。失乐园上半第10天，探索渐入尾声但下半无任何线索，玩家进入"中场期待+不安"的情绪期。做上半全景回顾+时装叙事解读+下半期待蓄力。',
+    platform: '小红书 + B站 + 抖音',
+    chars: ['全员'],
+    type: '活动中场总结',
     score: 83,
   },
   {
-    title: '某某人的每一顶帽子：分身死亡时他承受了什么——Nobody的自我消解之路',
-    reason: '某某人神秘感持续驱动关注。官方设定中"分身受伤本体承受损害+帽子收藏+酬劳一半囤子弹"串联出一位以分身替代自我的角色画像。"帽子"可成为核心隐喻——每顶帽子都是一次分身死亡、一次自我消解。',
-    platform: 'Lofter + 微博',
-    chars: ['某某人'],
-    type: '文学向',
-    score: 80,
-  },
-  {
-    title: '失乐园的欲望地图：九角色×六欲属性×五座游戏厅=一张信息图读懂全角色',
-    reason: '游戏"欲望"体系是核心设定骨架，但目前没有系统化对照图。高信息密度图解在小红书有极强的收藏驱动传播力。可含欲望互克关系+失乐园游戏厅关联+愚者在欲望体系中的特殊位置。',
-    platform: '小红书 + B站',
-    chars: ['全员'],
-    type: '信息图解',
-    score: 78,
-  },
-  {
-    title: '西西莉亚的玫瑰：「致BOSS」书信集——九个男角色在失乐园里交出的最后一张底牌',
-    reason: '书信体/第二人称是女性向社区高互动形式，"失乐园"主题天然适合——每个角色进入失乐园都意味着某种"放下过去"或"重新抉择"。建议先发布前三封（野狼/暴君/愚者）形成系列连载。',
-    platform: 'Lofter + 小红书',
-    chars: ['全员'],
-    type: '书信体系列',
-    score: 76,
+    title: '提线人·科技部长：爱欲驱动者的"效率"——一个用理性掩盖感情的人',
+    reason: '提线人热度仅24%但对设定极度特殊：唯一"爱欲"属性角色却担任"科技部长"。爱欲+效率=最矛盾组合——他是否能区分"最优分配"和"偏心给你"？在失乐园里所有人被迫"忘记过去"，但提线人从未"记得"过自己的感情。冷门角色的叙事蓝海。',
+    platform: 'Lofter + 小红书 + B站',
+    chars: ['提线人'],
+    type: '冷门角色挖掘',
+    score: 82,
   },
 ];
 
@@ -2065,12 +2224,96 @@ function openModal(id) {
       <h4>📢 当前二创热点</h4>
       <p style="font-size:14px;color:var(--text2);line-height:1.8;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.1);border-radius:8px;padding:12px 16px;">🔥 ${c.hotContent}</p>
     </div>
+
+    <div class="note-section">
+      <h4>📝 我的创作笔记</h4>
+      <div class="note-input-area">
+        <textarea class="note-textarea" id="noteText_${c.id}" placeholder="写下你对 ${c.name} 人设的理解、创作灵感、角色分析……&#10;支持多行输入，随时保存随时查阅。"></textarea>
+        <div class="note-url-row">
+          <input type="url" class="note-url-input" id="noteUrl_${c.id}" placeholder="参考来源网址（可选）：如 https://www.bilibili.com/video/BVxxxxxx" />
+          <button class="note-save-btn" onclick="saveNote('${c.id}')">💾 保存笔记</button>
+        </div>
+      </div>
+      <div class="note-list" id="noteList_${c.id}"></div>
+    </div>
   `;
   document.getElementById('charModal').classList.add('show');
+  renderNotes(c.id);
 }
 
 function closeModal() { document.getElementById('charModal').classList.remove('show'); }
 document.getElementById('charModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+// ===== 创作笔记功能 =====
+function getNotes(charId) {
+  try {
+    const all = JSON.parse(localStorage.getItem('ympz_notes') || '{}');
+    return all[charId] || [];
+  } catch(e) { return []; }
+}
+
+function saveAllNotes(charId, notes) {
+  try {
+    const all = JSON.parse(localStorage.getItem('ympz_notes') || '{}');
+    all[charId] = notes;
+    localStorage.setItem('ympz_notes', JSON.stringify(all));
+  } catch(e) { console.error('保存笔记失败', e); }
+}
+
+function saveNote(charId) {
+  const textEl = document.getElementById('noteText_' + charId);
+  const urlEl = document.getElementById('noteUrl_' + charId);
+  if (!textEl) return;
+  const text = textEl.value.trim();
+  const url = urlEl ? urlEl.value.trim() : '';
+  if (!text) { alert('请输入笔记内容'); return; }
+  const notes = getNotes(charId);
+  notes.push({
+    text: text,
+    url: url,
+    time: new Date().toLocaleString('zh-CN', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})
+  });
+  saveAllNotes(charId, notes);
+  textEl.value = '';
+  if (urlEl) urlEl.value = '';
+  renderNotes(charId);
+}
+
+function deleteNote(charId, idx) {
+  const notes = getNotes(charId);
+  notes.splice(idx, 1);
+  saveAllNotes(charId, notes);
+  renderNotes(charId);
+}
+
+function renderNotes(charId) {
+  const container = document.getElementById('noteList_' + charId);
+  if (!container) return;
+  const notes = getNotes(charId);
+  if (notes.length === 0) {
+    container.innerHTML = '<div class="note-empty">暂无笔记，在上方输入你对这个角色的人设理解后保存吧 ✍️</div>';
+    return;
+  }
+  container.innerHTML = notes.map((n, i) => {
+    let html = '<div class="note-item">';
+    html += '<div class="note-item-text">' + escapeHtml(n.text) + '</div>';
+    if (n.url) {
+      const displayUrl = n.url.length > 60 ? n.url.substring(0, 57) + '...' : n.url;
+      html += '<div class="note-item-source">📎 <a href="' + escapeHtml(n.url) + '" target="_blank" rel="noopener">' + escapeHtml(displayUrl) + '</a></div>';
+    }
+    html += '<div class="note-item-meta">';
+    html += '<span class="note-item-time">' + escapeHtml(n.time || '') + '</span>';
+    html += '<button class="note-delete-btn" onclick="deleteNote(\'' + charId + '\',' + i + ')">🗑 删除</button>';
+    html += '</div>';
+    html += '</div>';
+    return html;
+  }).join('');
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 
 // ===== TRENDS =====
 function showPlatform(key, btn) {
